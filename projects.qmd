@@ -12,7 +12,7 @@ listing:
 page-layout: article
 ---
 
-Practical cases in controlling, FP&A and corporate valuation. All data is public or synthetic. No confidential employer data is used.
+Practical cases in controlling, FP&A, valuation and real estate investment. Data shown is public or synthetic. Where a case drew on confidential documents, only the method and market-level findings are shown. No confidential employer data is used.
 
 ::: {#project-list}
 :::

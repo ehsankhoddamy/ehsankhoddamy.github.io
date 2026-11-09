@@ -22,7 +22,6 @@ Each study starts with a one-minute summary, then goes into data, method and res
 These studies will be published once they are written up for the web and cleared for publication.
 
 - **Machine Learning in Asset Pricing:** linear vs. nonlinear models for predicting the cross-section of stock returns (master's thesis).
-- **Private Equity Real Estate Manager Selection:** due diligence on two US logistics real-estate funds and an allocation recommendation for a simulated USD 40 million mandate.
 
 <!-- To add a study: create a new .qmd file in research/ (copy fomc-study.qmd as a template).
      It appears in the list above automatically. Remove its line from "In preparation". -->

@@ -1,0 +1,41 @@
+/*-- scss:defaults --*/
+
+// Fonts: serif headings for an academic feel, clean sans body for readability
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap');
+
+$font-family-sans-serif: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+$headings-font-family: "Source Serif 4", Georgia, serif;
+$font-size-root: 17px;
+$line-height-base: 1.65;
+
+// Palette: light background, dark navy accents
+$navy: #1b2a4a;
+$navy-light: #2f4a7a;
+$ink: #1f2933;
+$muted: #5b6573;
+$rule: #e3e7ee;
+
+$body-bg: #ffffff;
+$body-color: $ink;
+$primary: $navy-light;
+$link-color: $navy-light;
+$headings-color: $navy;
+
+$navbar-bg: $navy;
+$navbar-fg: #ffffff;
+$navbar-hl: #c9d6ee;
+
+$footer-bg: #f6f8fb;
+$footer-fg: $muted;
+
+/*-- scss:rules --*/
+
+h1, h2, h3 {
+  letter-spacing: -0.01em;
+}
+
+h2 {
+  margin-top: 2.2rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid $rule;
+}

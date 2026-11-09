@@ -1,0 +1,70 @@
+---
+title: "About & CV"
+page-layout: article
+---
+
+I'm a financial analyst with investment-banking experience in company valuation and corporate finance experience at Nestlé Nespresso. I'm completing an M.Sc. in Business Administration (Finance) at the University of Münster, with research in empirical asset pricing, financial markets and machine learning.
+
+What I enjoy most is turning a business question into a clean dataset, a defensible analysis and a clear recommendation.
+
+[Download CV (PDF)](assets/cv.pdf){.btn-navy}
+
+## Experience
+
+::: {.cv-entry}
+[Working Student, Finance – Controlling & Accounting]{.role} · Nestlé Nespresso SA\
+[Nov 2025 – Sep 2026 · Düsseldorf, Germany]{.meta}
+
+- **Profitability analysis:** consolidated Oracle-reported sales with COGS and operating expenses into a retail-site P&L, supporting margin and operating-KPI analysis.
+- **Performance reporting:** reviewed retail revenue, costs and profitability against budget, latest forecast and prior year; prepared recurring management reports.
+- **Dashboards:** built Power BI dashboards tracking marketing-campaign spending and third-party supplier costs for forecast and performance reviews.
+- **Data and controls:** prepared reports with SQL, Snowflake and Power Query; reconciled legacy SAP-based reporting against new datasets during a system migration.
+- **Risk analytics:** built a Python/SQL workflow to examine around 409,000 billing records for payment-risk patterns and technical exceptions; supported receivables, month-end and fixed-asset reconciliations.
+:::
+
+::: {.cv-entry}
+[Working Student – Financial Analyst]{.role} · Arian Tamin Afarin Investment Banking\
+[Jul 2018 – Sep 2020 · Tehran, Iran]{.meta}
+
+- **Valuation:** built DCF models and comparable-company valuations across around 20 projects, using financial statements, sector research, peer data and operating forecasts.
+- **Modelling:** estimated cash flows, WACC and terminal values; ran sensitivity and scenario analyses on growth, margins and discount rates.
+- **Deal support:** supported investment assessments, due diligence and IPO-pricing discussions with written reports and management presentations.
+- **Portfolio analysis:** contributed to portfolio-performance and diversification analysis, including value-at-risk and Monte Carlo methods.
+:::
+
+::: {.cv-entry}
+[Sales & Marketing Specialist]{.role} · BUT Iran\
+[Oct 2015 – Mar 2018 · Tehran, Iran]{.meta}
+
+- Advised customers, presented solutions and closed sales; coordinated marketing activities and trained team members.
+:::
+
+## Education
+
+::: {.cv-entry}
+[M.Sc. Business Administration – Finance Specialisation]{.role} · University of Münster\
+[Oct 2023 – expected Jan 2027 · Münster, Germany]{.meta}
+
+- Focus: empirical asset pricing, investments, financial engineering and quantitative methods
+- Master's thesis (in progress): machine learning vs. linear models for predicting the cross-section of stock returns
+- Selected projects: [FOMC statements and asset prices](research/fomc-study.qmd) (grade 1.0); private equity real estate fund manager selection (grade 1.3); [personality traits and investment decisions](research/personality-investment.qmd)
+:::
+
+::: {.cv-entry}
+[B.Sc. Financial Management]{.role} · Azad University, Tehran\
+[2015 – 2020 · Tehran, Iran]{.meta}
+
+- Teaching assistant for the undergraduate course "Audit"
+:::
+
+## Skills
+
+**Investment analysis:** DCF, comparable-company valuation, financial statement analysis, WACC and terminal value, scenario and sensitivity analysis, due diligence, portfolio and risk analysis
+
+**Quantitative research:** econometrics, regression, PCA, empirical asset pricing, machine learning, NLP / FinBERT, Monte Carlo methods
+
+**Programming:** Python, R, Stata, SQL, VBA, Git / GitHub
+
+**Data & reporting:** advanced Excel, Power BI, Power Query, Snowflake, Oracle reporting, SAP reporting-data validation
+
+**Languages:** English (C1), German (C1), Persian (native)

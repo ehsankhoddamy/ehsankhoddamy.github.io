@@ -1,0 +1,40 @@
+---
+title: "Financial Performance Dashboard"
+description: "Actual vs. budget, margin analysis and rolling forecast for a synthetic consumer-goods company, built in Power BI."
+date: 2026-11-08  # TODO: set when published
+categories: [Power BI, SQL, Excel, Power Query]
+draft: true  # remove this line to publish the page
+toc: true
+---
+
+<!-- Uses SYNTHETIC data only. Never use real Nespresso figures, structures or account names. -->
+
+
+::: {.exec-summary}
+**In one minute.** [The business question, what the dashboard shows, and the two or three insights a manager would take from it.]{.todo}
+:::
+
+## Business question
+
+[e.g. Which product lines are missing budget, and is it a volume, price or cost problem?]{.todo}
+
+## Data and approach
+
+[How the synthetic data was generated, the data model (fact and dimension tables), key DAX measures.]{.todo}
+
+## Dashboard
+
+<!-- Add screenshots: ![Overview page](financial-dashboard/overview.png) -->
+
+## Key insights
+
+1. [Insight 1]{.todo}
+2. [Insight 2]{.todo}
+
+## Recommendations
+
+[What a finance business partner would recommend based on the analysis.]{.todo}
+
+## Supporting materials
+
+- [Power BI file / SQL scripts on GitHub]{.todo}

@@ -1,0 +1,55 @@
+---
+pagetitle: "Ehsan Khoddamy | Finance · Research · Analytics"
+page-layout: article
+---
+
+::: {.hero}
+
+[Ehsan Khoddamy]{.name}
+
+[Financial Analyst · Quantitative Research · Controlling & Finance Analytics]{.headline}
+
+::: {.intro}
+I'm a financial analyst finishing an M.Sc. in Finance at the University of Münster. I bring valuation experience from around 20 investment-banking projects, controlling and reporting work at Nestlé Nespresso, and empirical research that uses NLP and machine learning to study how information moves asset prices.
+
+On this site you'll find the work itself: the question, the data, the method and what I found.
+:::
+
+::: {.actions}
+[Read the FOMC study](research/fomc-study.qmd){.btn-navy}
+[Download CV (PDF)](assets/cv.pdf){.btn-outline-navy}
+:::
+
+:::
+
+## Featured work
+
+::: {.card-grid}
+
+::: {.work-card}
+[Research]{.status}
+
+### [Do FOMC Statements Move Asset Prices Beyond the Rate Decision?](research/fomc-study.qmd)
+
+::: {.tags}
+[Python]{.tag} [NLP]{.tag} [Transformers]{.tag} [Event study]{.tag}
+:::
+
+Five text measures of Fed communication, from a hawkishness dictionary to transformer models, tested on 239 FOMC meetings. The policy surprise explains the market move; the wording adds almost nothing.
+:::
+
+::: {.work-card}
+[Research]{.status}
+
+### [Personality Differences and Investment Decisions](research/personality-investment.qmd)
+
+::: {.tags}
+[R]{.tag} [Regression]{.tag} [Mediation analysis]{.tag} [Survey data]{.tag}
+:::
+
+German household panel data (SOEP) on how the Big Five traits shape stock ownership. Openness works almost entirely through risk tolerance, with an inverse-U pattern.
+:::
+
+:::
+
+[See all research →](research.qmd)

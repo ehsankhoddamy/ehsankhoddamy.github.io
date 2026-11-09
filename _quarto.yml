@@ -1,0 +1,51 @@
+project:
+  type: website
+  output-dir: docs
+  resources:
+    - assets/cv.pdf
+
+website:
+  title: "Ehsan Khoddamy"
+  description: "Finance · Research · Analytics — empirical finance research, quantitative modelling and finance analytics."
+  site-url: "https://ehsankhoddamy.github.io"
+  draft-mode: gone   # pages with `draft: true` are not built or published
+  page-navigation: true
+  back-to-top-navigation: true
+  open-graph: true
+  navbar:
+    title: "Ehsan Khoddamy"
+    left:
+      - href: index.qmd
+        text: Home
+      - href: research.qmd
+        text: Research
+      - href: projects.qmd
+        text: Projects
+      - href: about.qmd
+        text: About & CV
+      - href: contact.qmd
+        text: Contact
+    right:
+      - icon: github
+        href: https://github.com/ehsankhoddamy
+        aria-label: GitHub
+      - icon: linkedin
+        href: https://www.linkedin.com/in/ehsan-khoddamy
+        aria-label: LinkedIn
+  page-footer:
+    left: "© 2026 Ehsan Khoddamy"
+    right: "Built with [Quarto](https://quarto.org)"
+
+format:
+  html:
+    theme:
+      light: [cosmo, theme.scss]
+    css: styles.css
+    toc: false
+    smooth-scroll: false
+    link-external-newwindow: true
+
+# If you later add Python/R code chunks, results are computed on your computer
+# and stored in _freeze/, so publishing never needs to re-run your analysis.
+execute:
+  freeze: auto

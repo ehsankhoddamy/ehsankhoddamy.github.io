@@ -1,0 +1,43 @@
+---
+title: "DCF & Valuation Case Study"
+description: "A full discounted cash flow valuation of a listed company, with WACC derivation and scenario analysis."
+date: 2026-11-08  # TODO: set when published
+categories: [Excel, DCF, WACC, Scenarios]
+draft: true  # remove this line to publish the page
+toc: true
+---
+
+<!-- Uses PUBLIC data only (annual reports, market data). -->
+
+
+::: {.exec-summary}
+**In one minute.** [Company, valuation result per share vs. market price, and the one or two assumptions that drive the result most.]{.todo}
+:::
+
+## Company and question
+
+[Which company and why; what the valuation is meant to answer.]{.todo}
+
+## Forecast and assumptions
+
+[Revenue drivers, margins, capex, working capital. Show the key assumptions in a small table.]{.todo}
+
+## Cost of capital
+
+[WACC derivation: risk-free rate, beta, equity risk premium, cost of debt, capital structure, with sources.]{.todo}
+
+## Valuation result
+
+[Enterprise value bridge to equity value per share. Compare with multiples as a cross-check.]{.todo}
+
+## Scenarios and sensitivity
+
+[Base / bull / bear cases and a WACC × terminal growth sensitivity table.]{.todo}
+
+## Limitations
+
+[What the model does not capture.]{.todo}
+
+## Supporting materials
+
+- [Excel model (download)]{.todo}

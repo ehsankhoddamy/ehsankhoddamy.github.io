@@ -1,0 +1,10 @@
+---
+title: "Contact"
+page-layout: article
+---
+
+I'm open to roles in investment analysis, valuation, quantitative research, controlling and FP&A, in the Frankfurt area and internationally. The quickest way to reach me is by email.
+
+- **Email:** [ehsankhoddamy@gmail.com](mailto:ehsankhoddamy@gmail.com)
+- **LinkedIn:** [linkedin.com/in/ehsan-khoddamy](https://www.linkedin.com/in/ehsan-khoddamy)
+- **GitHub:** [github.com/ehsankhoddamy](https://github.com/ehsankhoddamy)

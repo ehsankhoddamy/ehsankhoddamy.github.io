@@ -1,0 +1,26 @@
+---
+title: "Projects"
+subtitle: "Finance and analytics cases"
+listing:
+  id: project-list
+  contents: projects/*.qmd
+  type: grid
+  grid-columns: 2
+  sort: "date desc"
+  fields: [title, description, categories]
+  categories: false
+page-layout: article
+---
+
+Practical cases in controlling, FP&A and corporate valuation. All data is public or synthetic. No confidential employer data is used.
+
+::: {#project-list}
+:::
+
+<!-- DELETE the section below once your first project is published
+     (i.e. once you remove `draft: true` from a file in projects/). -->
+
+## In preparation
+
+- **Financial Performance Dashboard:** actual vs. budget, margin analysis and rolling forecast in Power BI, built on synthetic data.
+- **DCF & Valuation Case Study:** a full DCF with WACC derivation and scenario analysis on a listed company.

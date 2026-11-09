@@ -1,0 +1,177 @@
+[
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact",
+    "section": "",
+    "text": "I’m open to roles in investment analysis, valuation, quantitative research, controlling and FP&A, in the Frankfurt area and internationally. The quickest way to reach me is by email.\n\nEmail: ehsankhoddamy@gmail.com\nLinkedIn: linkedin.com/in/ehsan-khoddamy\nGitHub: github.com/ehsankhoddamy\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About & CV",
+    "section": "",
+    "text": "I’m a financial analyst with investment-banking experience in company valuation and corporate finance experience at Nestlé Nespresso. I’m completing an M.Sc. in Business Administration (Finance) at the University of Münster, with research in empirical asset pricing, financial markets and machine learning.\nWhat I enjoy most is turning a business question into a clean dataset, a defensible analysis and a clear recommendation.\nDownload CV (PDF)"
+  },
+  {
+    "objectID": "about.html#experience",
+    "href": "about.html#experience",
+    "title": "About & CV",
+    "section": "Experience",
+    "text": "Experience\n\nWorking Student, Finance – Controlling & Accounting · Nestlé Nespresso SA\nNov 2025 – Sep 2026 · Düsseldorf, Germany\n\nProfitability analysis: consolidated Oracle-reported sales with COGS and operating expenses into a retail-site P&L, supporting margin and operating-KPI analysis.\nPerformance reporting: reviewed retail revenue, costs and profitability against budget, latest forecast and prior year; prepared recurring management reports.\nDashboards: built Power BI dashboards tracking marketing-campaign spending and third-party supplier costs for forecast and performance reviews.\nData and controls: prepared reports with SQL, Snowflake and Power Query; reconciled legacy SAP-based reporting against new datasets during a system migration.\nRisk analytics: built a Python/SQL workflow to examine around 409,000 billing records for payment-risk patterns and technical exceptions; supported receivables, month-end and fixed-asset reconciliations.\n\n\n\nWorking Student – Financial Analyst · Arian Tamin Afarin Investment Banking\nJul 2018 – Sep 2020 · Tehran, Iran\n\nValuation: built DCF models and comparable-company valuations across around 20 projects, using financial statements, sector research, peer data and operating forecasts.\nModelling: estimated cash flows, WACC and terminal values; ran sensitivity and scenario analyses on growth, margins and discount rates.\nDeal support: supported investment assessments, due diligence and IPO-pricing discussions with written reports and management presentations.\nPortfolio analysis: contributed to portfolio-performance and diversification analysis, including value-at-risk and Monte Carlo methods.\n\n\n\nSales & Marketing Specialist · BUT Iran\nOct 2015 – Mar 2018 · Tehran, Iran\n\nAdvised customers, presented solutions and closed sales; coordinated marketing activities and trained team members."
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "About & CV",
+    "section": "Education",
+    "text": "Education\n\nM.Sc. Business Administration – Finance Specialisation · University of Münster\nOct 2023 – expected Jan 2027 · Münster, Germany\n\nFocus: empirical asset pricing, investments, financial engineering and quantitative methods\nMaster’s thesis (in progress): machine learning vs. linear models for predicting the cross-section of stock returns\nSelected projects: FOMC statements and asset prices (grade 1.0); private equity real estate fund manager selection (grade 1.3); personality traits and investment decisions\n\n\n\nB.Sc. Financial Management · Azad University, Tehran\n2015 – 2020 · Tehran, Iran\n\nTeaching assistant for the undergraduate course “Audit”"
+  },
+  {
+    "objectID": "about.html#skills",
+    "href": "about.html#skills",
+    "title": "About & CV",
+    "section": "Skills",
+    "text": "Skills\nInvestment analysis: DCF, comparable-company valuation, financial statement analysis, WACC and terminal value, scenario and sensitivity analysis, due diligence, portfolio and risk analysis\nQuantitative research: econometrics, regression, PCA, empirical asset pricing, machine learning, NLP / FinBERT, Monte Carlo methods\nProgramming: Python, R, Stata, SQL, VBA, Git / GitHub\nData & reporting: advanced Excel, Power BI, Power Query, Snowflake, Oracle reporting, SAP reporting-data validation\nLanguages: English (C1), German (C1), Persian (native)"
+  },
+  {
+    "objectID": "research/fomc-study.html",
+    "href": "research/fomc-study.html",
+    "title": "Do FOMC Statements Move Asset Prices Beyond the Rate Decision?",
+    "section": "",
+    "text": "In one minute. Central banks move markets with words as well as rates. I test whether the wording of Federal Reserve statements moves asset prices beyond the rate decision itself. The sample covers all 239 scheduled FOMC meetings from 1994 to 2023, with asset-price changes in a 30-minute window around each announcement. I measure statement language five ways, from a hand-built hawkishness dictionary to transformer models (FinBERT, CentralBankRoBERTa).\nThe market-implied policy surprise explains 81% of the move in 2-year yields. None of the five text measures adds meaningful explanatory power on top of it. Two results that first looked significant turned out to be artifacts of the policy regime.\nSeminar paper, Finance Center Münster (Seminar Asset Pricing, 2026), graded 1.0. The extension to five text measures and the factor replication is ongoing work toward a working paper."
+  },
+  {
+    "objectID": "research/fomc-study.html#research-question",
+    "href": "research/fomc-study.html#research-question",
+    "title": "Do FOMC Statements Move Asset Prices Beyond the Rate Decision?",
+    "section": "Research question",
+    "text": "Research question\nOn 28 January 2004 the FOMC left rates unchanged, exactly as markets expected. Yet within thirty minutes, two- and five-year Treasury yields rose by roughly 20 and 25 basis points. The trigger was a change of wording: “considerable period” was replaced by “patient”.\nIf words alone can move yields that much, communication is a policy instrument in its own right. This study asks two questions:\n\nDoes FOMC statement language move asset prices beyond the rate decision?\nIf so, through which channel? The literature proposes three:\n\nPolicy signalling: words shift expectations about the future rate path.\nInformation: words reveal the Fed’s view of the economy.\nUncertainty: words change the risk premium on long-term bonds.\n\n\nThe uncertainty channel has a testable signature. It should move long maturities more than short ones, and so change the slope of the yield curve. Hansen, McMahon and Tong (2019) find this pattern for the Bank of England. This study tests whether it holds for the Fed."
+  },
+  {
+    "objectID": "research/fomc-study.html#data-and-methodology",
+    "href": "research/fomc-study.html#data-and-methodology",
+    "title": "Do FOMC Statements Move Asset Prices Beyond the Rate Decision?",
+    "section": "Data and methodology",
+    "text": "Data and methodology\nSample. All 239 scheduled FOMC meetings, February 1994 to December 2023. Unscheduled emergency announcements are excluded. Post-meeting statements are scraped from federalreserve.gov and cleaned of headers, voting paragraphs and other non-policy text. 209 meetings have a matched statement. Regressions in first differences use 208.\nMarket data. 30-minute asset-price changes around each announcement from Bauer and Swanson (2023):\n\n2-, 5- and 10-year Treasury yields\nS&P 500 futures\nthe slope of the yield curve (10Y − 2Y)\n\nThe benchmark is the monetary-policy surprise (MPS), the first principal component of high-frequency changes in short-rate futures (fed funds and Eurodollar contracts up to one year ahead).\nFive text measures, from simple to expressive:\n\n\n\n\n\n\n\nMeasure\nWhat it captures\n\n\n\n\nBag-of-words hawkishness index\nHand-built dictionary of monetary-policy phrases (“removing accommodation”, “considerable period”), matched longest-first so context is respected\n\n\nFinBERT\nSentence-level financial tone from a transformer trained on financial news, averaged per statement\n\n\nCentralBankRoBERTa\nTransformer trained specifically on central-bank communication\n\n\nLDA topic intensities\nShare of each statement devoted to latent topics\n\n\nRoBERTa embeddings\nContextual representation of the full statement\n\n\n\nThe dictionary score is\n\\[\n\\text{BoW}_t = \\frac{H_t - D_t}{H_t + D_t + 1},\n\\]\nwhere \\(H_t\\) and \\(D_t\\) count hawkish and dovish phrases. Positive values mean a more hawkish statement.\nEstimation. For each market outcome \\(k\\):\n\\[\n\\Delta y_{t,k} = \\alpha_k + \\beta_k \\, \\text{MPS}_t + \\gamma_k \\, \\Delta \\text{Text}_t + \\varepsilon_{t,k}\n\\]\nThree design choices matter:\n\nText enters as a change from the previous statement. A 30-minute price move can only react to new information. The pre-meeting tone is already known.\nMulti-dimensional measures are tested jointly. Topic and embedding blocks are tested with robust Wald tests.\nNarrative shocks. Following Hansen, McMahon and Tong (2019), each text measure is also residualised on four pre-meeting macro variables. This isolates the part of the language that the economic state does not predict.\n\nAll regressions are OLS with HC3 heteroskedasticity-robust standard errors."
+  },
+  {
+    "objectID": "research/fomc-study.html#key-findings",
+    "href": "research/fomc-study.html#key-findings",
+    "title": "Do FOMC Statements Move Asset Prices Beyond the Rate Decision?",
+    "section": "Key findings",
+    "text": "Key findings\n\n1. The policy surprise dominates\nThe monetary-policy surprise is highly significant for every outcome, with the expected signs:\n\nTreasury yields: a hawkish surprise raises them at every maturity. The effect is strongest at two years.\nEquities: the S&P 500 falls.\nYield curve: it flattens.\n\n\n\n\nR² from regressing 30-minute asset-price responses on the monetary-policy surprise alone (239 meetings).\n\n\n\nBaseline regressions, N = 239. *** p &lt; 0.01.\n\n\nOutcome\nCoefficient on MPS\nRobust s.e.\nR²\n\n\n\n\n2Y Treasury\n0.831***\n0.053\n0.813\n\n\n5Y Treasury\n0.744***\n0.057\n0.638\n\n\n10Y Treasury\n0.520***\n0.049\n0.482\n\n\nS&P 500\n−4.728***\n0.682\n0.244\n\n\n10Y − 2Y slope\n−0.311***\n0.045\n0.339\n\n\n\n\n\n2. Statement language adds almost nothing on top\nAcross five text measures and five outcomes, the extra R² from adding text is close to zero:\n\nIncrease in R² over the surprise-only model. Stars show joint significance of the text coefficients (robust Wald test). The embedding row uses component levels. That result is diagnosed in finding 4 and does not survive.\n\n\n\n\n\n\n\n\n\n\nMeasure\n2Y\n5Y\n10Y\nS&P 500\n10Y−2Y\n\n\n\n\nBoW dictionary\n+0.002\n+0.003\n+0.007\n+0.002\n+0.002\n\n\nFinBERT\n+0.000\n+0.000\n+0.000\n+0.010\n+0.000\n\n\nCentralBankRoBERTa\n+0.005*\n+0.004\n+0.007\n+0.005\n+0.000\n\n\nLDA topics\n+0.004\n+0.006\n+0.011\n+0.006\n+0.036\n\n\nRoBERTa embeddings\n+0.003\n+0.007\n+0.009\n+0.069***\n+0.023**\n\n\n\n\nThe dictionary does classify statements plausibly. The most hawkish ones cluster in the 2005–07 and 2015–18 tightening cycles; the most dovish in the 2008 crisis years and the early-2000s recession. Its coefficients also have the right sign, yet none is statistically significant.\nFinBERT shows only a weak, insignificant link to equity returns.\nSlope regressions, the direct test of the uncertainty channel, are insignificant for every text measure.\nNarrative shocks, the residualised text measures, are insignificant too.\n\n\n\n3. The null is not an artifact\nOne worry is that the policy surprise simply absorbs the text signal. It does not. The text surprises are almost uncorrelated with it: correlations range from −0.07 to +0.08. The text varies independently; it just does not predict prices.\n\n\n4. Two apparent positives, diagnosed and rejected\n\nTopic levels seemed to explain S&P 500 moves (p = 0.005).\n\nThe effect vanishes when the change in topics is used instead (p = 0.936). That is the specification consistent with the event-study design.\nIt also loses significance once a post-2008 regime indicator is added (p = 0.092).\nSo topic levels were tracking the policy era, not announcement news.\n\nEmbedding levels show the same pattern. Their first principal component correlates −0.719 with the calendar year.\nOne marginal survivor. Embedding changes remain linked to the 10Y−2Y slope (p = 0.009). The link weakens outside the zero lower bound (p = 0.095) and when crisis statements are excluded (p = 0.077). It is reported as suggestive only.\n\n\n\n5. Replicating the target/path decomposition\nAs a benchmark, I rebuild the target and path factors of Gürkaynak, Sack and Swanson (2005) from raw futures data. The data come from the SF Fed’s U.S. Monetary Policy Event-Study Database. The replication reproduces their pattern: news about the future path of policy, not the current rate decision, drives longer-term yields.\n\n\n\nR² of Treasury yield responses on the target factor alone versus target plus path factor."
+  },
+  {
+    "objectID": "research/fomc-study.html#interpretation",
+    "href": "research/fomc-study.html#interpretation",
+    "title": "Do FOMC Statements Move Asset Prices Beyond the Rate Decision?",
+    "section": "Interpretation",
+    "text": "Interpretation\nThe findings above are what the data show. This section is my reading of them.\nThe policy surprise is measured in the same 30-minute window as the price moves. It therefore already captures the policy-path part of any news, including news carried by statement wording. What the text coefficients test is the effect of language outside the expected policy path. The obvious candidate is the term premium, which is the uncertainty channel.\nOn that reading:\n\nPolicy signalling is captured by the surprise itself.\nThe information channel gets only weak, fragile support (FinBERT on equities).\nThe uncertainty channel gets no support in FOMC statements, unlike the Bank of England evidence.\n\nThere is also a methodological lesson. Dictionaries are transparent but too coarse to read context. Transformer models read tone well, but they mix up financial sentiment with policy stance: strong-growth language can sound “positive” while being hawkish.\nFor practitioners, the implication is narrow. In the announcement window, the market-implied surprise is the signal. Off-the-shelf tone scores of the statement add little beyond it."
+  },
+  {
+    "objectID": "research/fomc-study.html#limitations",
+    "href": "research/fomc-study.html#limitations",
+    "title": "Do FOMC Statements Move Asset Prices Beyond the Rate Decision?",
+    "section": "Limitations",
+    "text": "Limitations\n\nStatements only. Press conferences, minutes and speeches are excluded, and they may carry the richer signal.\nImmediate reactions only. The 30-minute window cannot see slower effects on expectations.\nModel fit. FinBERT is trained on financial news, not central-bank language. CentralBankRoBERTa addresses this partly, but a model trained for hawkish/dovish classification on FOMC text could do better.\nDifferent setting. The contrast with the Bank of England may reflect institutions, document type, or text method. This design cannot separate them."
+  },
+  {
+    "objectID": "research/fomc-study.html#supporting-materials",
+    "href": "research/fomc-study.html#supporting-materials",
+    "title": "Do FOMC Statements Move Asset Prices Beyond the Rate Decision?",
+    "section": "Supporting materials",
+    "text": "Supporting materials\n\nCode: github.com/ehsankhoddamy/fomc-statements-asset-prices. Full pipeline in Python, including text measures, factor construction, regressions and diagnostics.\nData:\n\nBauer and Swanson (2023) monetary-policy surprises, Federal Reserve Bank of San Francisco\nU.S. Monetary Policy Event-Study Database (Acosta et al., 2025)\nFOMC statements from federalreserve.gov\n\nKey references:\n\nGürkaynak, Sack and Swanson (2005), International Journal of Central Banking\nHansen, McMahon and Tong (2019), Journal of Monetary Economics\nBauer and Swanson (2023), NBER Macroeconomics Annual\nAraci (2019), FinBERT"
+  },
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research",
+    "section": "",
+    "text": "Each study starts with a one-minute summary, then goes into data, method and results for readers who want the detail."
+  },
+  {
+    "objectID": "research.html#in-preparation",
+    "href": "research.html#in-preparation",
+    "title": "Research",
+    "section": "In preparation",
+    "text": "In preparation\nThese studies will be published once they are written up for the web and cleared for publication.\n\nMachine Learning in Asset Pricing: linear vs. nonlinear models for predicting the cross-section of stock returns (master’s thesis).\nPrivate Equity Real Estate Manager Selection: due diligence on two US logistics real-estate funds and an allocation recommendation for a simulated USD 40 million mandate."
+  },
+  {
+    "objectID": "research/personality-investment.html",
+    "href": "research/personality-investment.html",
+    "title": "Personality Differences and Investment Decisions",
+    "section": "",
+    "text": "In one minute. Households with similar income, wealth and education often make very different investment choices. Many hold no stocks at all. Using German household panel data (SOEP, 2005–2017), I test whether the Big Five personality traits help explain this, and through which channel.\n\nRisk appetite: personality strongly predicts how much risk people are willing to take.\nOpenness: it affects stock ownership almost entirely through risk tolerance. About 62% of its effect is mediated, and the relationship is inverse-U shaped.\nWho decides: which traits matter depends on whether a person decides alone or as head of a larger household.\nSeminar paper, Advanced Finance, University of Münster (Summer 2025). Replicates and extends Jiang, Peng and Yan (2024, Journal of Financial Economics) on German data."
+  },
+  {
+    "objectID": "research/personality-investment.html#research-question",
+    "href": "research/personality-investment.html#research-question",
+    "title": "Personality Differences and Investment Decisions",
+    "section": "Research question",
+    "text": "Research question\nStandard portfolio theory says households with similar resources should invest similarly. They do not. This study asks whether stable personality differences help close that gap.\nPersonality probably does not drive portfolio choice directly. The more plausible route is indirect. Traits shape what people believe about markets and how much risk they are willing to bear. Those two things, in turn, shape whether they own stocks.\nBig Five traits ──► beliefs about markets ──► stock market participation\n                ──► risk willingness      ──►"
+  },
+  {
+    "objectID": "research/personality-investment.html#data-and-methodology",
+    "href": "research/personality-investment.html#data-and-methodology",
+    "title": "Personality Differences and Investment Decisions",
+    "section": "Data and methodology",
+    "text": "Data and methodology\nData. The German Socio-Economic Panel (SOEP) is a nationally representative household survey. The study uses the 2005, 2009, 2013 and 2017 waves, the years in which the Big Five inventory is fielded.\n\n\n\n\n\n\n\nVariable\nMeasure\n\n\n\n\nBig Five traits\n16 survey items, averaged per trait and standardised\n\n\nStock participation\nOwns stocks or equity funds (0/100, so coefficients read as percentage points)\n\n\nBeliefs\nConcern about financial market stability (2009, 2013)\n\n\nRisk willingness\nSelf-reported general willingness to take risks (2009, 2013, 2017)\n\n\nControls\nAge, sex, years of education, labour income, net wealth, net debt, year fixed effects\n\n\n\nIdentifying the decision maker. Personality is measured for individuals, but stock ownership is recorded per household. In a multi-person household, the respondent may not be the one who invests. The sample is therefore split into:\n\none-person households, where the respondent clearly is the decision maker, and\nheads of multi-person households.\n\nMethods:\n\nMain models: OLS with heteroskedasticity-robust standard errors.\nRobustness: logit and probit, since participation is a yes/no outcome.\nChannels: causal mediation analysis following Imai, Keele and Tingley (2010), with 1,000 bootstrap replications.\nNon-linearity: a quadratic Openness term, tested against the linear model with likelihood-ratio tests rather than assumed.\nMeasurement: principal component analysis checks that the survey items load on the traits they should."
+  },
+  {
+    "objectID": "research/personality-investment.html#key-findings",
+    "href": "research/personality-investment.html#key-findings",
+    "title": "Personality Differences and Investment Decisions",
+    "section": "Key findings",
+    "text": "Key findings\n\n1. Personality strongly predicts risk willingness\n\nOLS with demographic controls and year fixed effects. N = 38,949, R² = 0.152. *** p &lt; 0.01.\n\n\nTrait\nEffect on general risk willingness\n\n\n\n\nOpenness\n+0.424***\n\n\nExtraversion\n+0.303***\n\n\nConscientiousness\n−0.127***\n\n\nAgreeableness\n−0.265***\n\n\nNeuroticism\n−0.285***\n\n\n\nOpen and extraverted people report more willingness to take risks. Conscientious, agreeable and neurotic people report less. This matches prior research. Neuroticism is also the strongest predictor of concern about financial markets (N = 21,909).\n\n\n2. Which traits matter depends on who decides\n\nEffect on stock market participation, in percentage points per standard deviation. * p &lt; 0.1, ** p &lt; 0.05, *** p &lt; 0.01.\n\n\nTrait\nOne-person households\nHeads of multi-person households\n\n\n\n\nOpenness\n−2.129***\n−0.328\n\n\nConscientiousness\n−0.957*\n−2.365***\n\n\nExtraversion\n−1.153**\n−0.143\n\n\nAgreeableness\n−0.540\n−1.972***\n\n\nNeuroticism\n−1.291***\n−0.503\n\n\nObservations\n8,663\n15,166\n\n\n\n\nPeople deciding alone: Openness, Extraversion and Neuroticism matter.\nHousehold heads: Conscientiousness and Agreeableness matter instead.\n\nIndividual dispositions seem to be diluted when financial decisions are shared. The models explain about 10–12% of the variation in stock ownership, which is typical for household finance.\n\n\n3. Openness has an inverse-U relationship with participation\nThe negative linear coefficient on Openness is misleading. A quadratic term fits significantly better in both groups (likelihood-ratio tests: p = 0.0002 and p = 0.0057).\nParticipation rises with moderate Openness and falls again at high levels. One explanation is overanalysis or distraction. Another is measurement: the PCA shows that two Openness items (aesthetic appreciation and abstract thinking) load diffusely, so the trait may mix facets with opposite effects.\n\n\n\nPredicted stock market participation by Openness score, one-person households.\n\n\n\n\n4. Openness works through risk tolerance\nThe mediation analysis separates each trait’s effect on participation into two parts:\n\nan indirect part that runs through the channel (ACME), and\na direct part (ADE).\n\n\nCausal mediation, 1,000 bootstrap replications.\n\n\n\n\n\n\n\n\nPath\nIndirect effect (ACME)\nDirect effect (ADE)\nShare mediated\n\n\n\n\nOpenness → risk willingness → participation\n0.292 (p = 0.001)\n0.180 (p = 0.450)\n62% (p = 0.002)\n\n\nNeuroticism → beliefs → participation\n0.108 (p = 0.002)\n−0.443 (p = 0.280)\nnot identified\n\n\n\nOpenness affects participation almost entirely through higher risk tolerance, not directly. For Neuroticism, the indirect path is significant but the total effect is not (p = 0.418). The share mediated therefore cannot be interpreted, and the result is treated as suggestive only.\n\n\n5. Results hold in non-linear models\nLogit and probit models reproduce the OLS conclusions:\n\nConscientiousness is robustly negative.\nNeuroticism and Extraversion are weakly negative.\nOpenness and Agreeableness are insignificant in linear form."
+  },
+  {
+    "objectID": "research/personality-investment.html#interpretation",
+    "href": "research/personality-investment.html#interpretation",
+    "title": "Personality Differences and Investment Decisions",
+    "section": "Interpretation",
+    "text": "Interpretation\nThe findings above are what the data show. This section is my reading of them.\nPersonality is a meaningful but context-dependent driver of investment behaviour. It works mainly through risk preferences rather than directly. Modelling traits as non-linear and mediated predictors captures patterns that a simple linear model hides; the Openness result is the clearest example.\nFor financial advisors and fintech products, short personality profiles could help match investment approaches to clients. Highly open clients may favour strategies that balance novelty with simplicity. Clients high in Neuroticism may benefit from more structured, reassuring portfolios."
+  },
+  {
+    "objectID": "research/personality-investment.html#limitations",
+    "href": "research/personality-investment.html#limitations",
+    "title": "Personality Differences and Investment Decisions",
+    "section": "Limitations",
+    "text": "Limitations\n\nAssociations, not causal effects. Personality is stable by design, so there is little within-person variation to exploit. The mediation results rely on assumptions (sequential ignorability) that these data cannot verify.\nThe belief channel may run backwards. On the corrected coding, more concern about markets goes with higher participation. That fits reverse causality: people who own stocks follow markets and worry more. The Neuroticism result should be read as an association.\nWealth is carried across waves. The SOEP wealth module is not fielded every year, so wealth and debt are carried forward or backward from the nearest module.\nOpenness is measured less cleanly than the other traits, which may contribute to the non-linear pattern."
+  },
+  {
+    "objectID": "research/personality-investment.html#supporting-materials",
+    "href": "research/personality-investment.html#supporting-materials",
+    "title": "Personality Differences and Investment Decisions",
+    "section": "Supporting materials",
+    "text": "Supporting materials\n\nCode: github.com/ehsankhoddamy/personality-traits-investment-decisions. Full R pipeline covering cleaning, variable construction, estimation and figures.\nData: German Socio-Economic Panel (SOEP), waves 2005–2017. SOEP data cannot be redistributed; access for research is free via DIW Berlin.\nKey references:\n\nJiang, Peng and Yan (2024), Journal of Financial Economics\nImai, Keele and Tingley (2010), Psychological Methods\nBecker et al. (2012), Annual Review of Economics"
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Practical cases in controlling, FP&A and corporate valuation. All data is public or synthetic. No confidential employer data is used."
+  },
+  {
+    "objectID": "projects.html#in-preparation",
+    "href": "projects.html#in-preparation",
+    "title": "Projects",
+    "section": "In preparation",
+    "text": "In preparation\n\nFinancial Performance Dashboard: actual vs. budget, margin analysis and rolling forecast in Power BI, built on synthetic data.\nDCF & Valuation Case Study: a full DCF with WACC derivation and scenario analysis on a listed company."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Ehsan Khoddamy",
+    "section": "",
+    "text": "Ehsan Khoddamy\nFinancial Analyst · Quantitative Research · Controlling & Finance Analytics\n\nI’m a financial analyst finishing an M.Sc. in Finance at the University of Münster. I bring valuation experience from around 20 investment-banking projects, controlling and reporting work at Nestlé Nespresso, and empirical research that uses NLP and machine learning to study how information moves asset prices.\nOn this site you’ll find the work itself: the question, the data, the method and what I found.\n\n\nRead the FOMC study Download CV (PDF)"
+  },
+  {
+    "objectID": "index.html#featured-work",
+    "href": "index.html#featured-work",
+    "title": "Ehsan Khoddamy",
+    "section": "Featured work",
+    "text": "Featured work\n\n\nResearch\n\nDo FOMC Statements Move Asset Prices Beyond the Rate Decision?\n\nPython NLP Transformers Event study\n\nFive text measures of Fed communication, from a hawkishness dictionary to transformer models, tested on 239 FOMC meetings. The policy surprise explains the market move; the wording adds almost nothing.\n\n\n\nResearch\n\nPersonality Differences and Investment Decisions\n\nR Regression Mediation analysis Survey data\n\nGerman household panel data (SOEP) on how the Big Five traits shape stock ownership. Openness works almost entirely through risk tolerance, with an inverse-U pattern.\n\n\n\nSee all research →"
+  }
+]

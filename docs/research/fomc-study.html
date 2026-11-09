@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2026-05-20">
+<meta name="description" content="A high-frequency event study of 239 FOMC meetings (1994–2023), testing five text measures of Fed communication, from a hawkishness dictionary to transformer models, against the monetary-policy surprise.">
+
+<title>Do FOMC Statements Move Asset Prices Beyond the Rate Decision? – Ehsan Khoddamy</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-0cba44c0ba520da4749d2c92f9eca460.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+<meta property="og:title" content="Do FOMC Statements Move Asset Prices Beyond the Rate Decision? – Ehsan Khoddamy">
+<meta property="og:description" content="A high-frequency event study of 239 FOMC meetings (1994–2023), testing five text measures of Fed communication, from a hawkishness dictionary to transformer models, against the monetary-policy surprise.">
+<meta property="og:image" content="https://ehsankhoddamy.github.io/research/fomc-figures/baseline-r2.svg">
+<meta property="og:site_name" content="Ehsan Khoddamy">
+<meta property="og:image:alt" content="Bar chart of R-squared from the monetary-policy surprise alone: 2-year Treasury 0.813, 5-year 0.638, 10-year 0.482, 10-year minus 2-year slope 0.339, S&amp;P 500 0.244.">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Ehsan Khoddamy</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../research.html"> 
+<span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../projects.html"> 
+<span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About &amp; CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../contact.html"> 
+<span class="menu-text">Contact</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/ehsankhoddamy"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/ehsan-khoddamy"> <i class="bi bi-linkedin" role="img" aria-label="LinkedIn">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#research-question" id="toc-research-question" class="nav-link active" data-scroll-target="#research-question">Research question</a></li>
+  <li><a href="#data-and-methodology" id="toc-data-and-methodology" class="nav-link" data-scroll-target="#data-and-methodology">Data and methodology</a></li>
+  <li><a href="#key-findings" id="toc-key-findings" class="nav-link" data-scroll-target="#key-findings">Key findings</a>
+  <ul class="collapse">
+  <li><a href="#the-policy-surprise-dominates" id="toc-the-policy-surprise-dominates" class="nav-link" data-scroll-target="#the-policy-surprise-dominates">1. The policy surprise dominates</a></li>
+  <li><a href="#statement-language-adds-almost-nothing-on-top" id="toc-statement-language-adds-almost-nothing-on-top" class="nav-link" data-scroll-target="#statement-language-adds-almost-nothing-on-top">2. Statement language adds almost nothing on top</a></li>
+  <li><a href="#the-null-is-not-an-artifact" id="toc-the-null-is-not-an-artifact" class="nav-link" data-scroll-target="#the-null-is-not-an-artifact">3. The null is not an artifact</a></li>
+  <li><a href="#two-apparent-positives-diagnosed-and-rejected" id="toc-two-apparent-positives-diagnosed-and-rejected" class="nav-link" data-scroll-target="#two-apparent-positives-diagnosed-and-rejected">4. Two apparent positives, diagnosed and rejected</a></li>
+  <li><a href="#replicating-the-targetpath-decomposition" id="toc-replicating-the-targetpath-decomposition" class="nav-link" data-scroll-target="#replicating-the-targetpath-decomposition">5. Replicating the target/path decomposition</a></li>
+  </ul></li>
+  <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation">Interpretation</a></li>
+  <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations">Limitations</a></li>
+  <li><a href="#supporting-materials" id="toc-supporting-materials" class="nav-link" data-scroll-target="#supporting-materials">Supporting materials</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Do FOMC Statements Move Asset Prices Beyond the Rate Decision?</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Python</div>
+    <div class="quarto-category">NLP</div>
+    <div class="quarto-category">Transformers</div>
+    <div class="quarto-category">Event study</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    A high-frequency event study of 239 FOMC meetings (1994–2023), testing five text measures of Fed communication, from a hawkishness dictionary to transformer models, against the monetary-policy surprise.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 20, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="exec-summary">
+<p><strong>In one minute.</strong> Central banks move markets with words as well as rates. I test whether the <em>wording</em> of Federal Reserve statements moves asset prices beyond the rate decision itself. The sample covers all 239 scheduled FOMC meetings from 1994 to 2023, with asset-price changes in a 30-minute window around each announcement. I measure statement language five ways, from a hand-built hawkishness dictionary to transformer models (FinBERT, CentralBankRoBERTa).</p>
+<p>The market-implied policy surprise explains 81% of the move in 2-year yields. <strong>None of the five text measures adds meaningful explanatory power on top of it.</strong> Two results that first looked significant turned out to be artifacts of the policy regime.</p>
+</div>
+<p><em>Seminar paper, Finance Center Münster (Seminar Asset Pricing, 2026), graded 1.0. The extension to five text measures and the factor replication is ongoing work toward a working paper.</em></p>
+<section id="research-question" class="level2">
+<h2 class="anchored" data-anchor-id="research-question">Research question</h2>
+<p>On 28 January 2004 the FOMC left rates unchanged, exactly as markets expected. Yet within thirty minutes, two- and five-year Treasury yields rose by roughly 20 and 25 basis points. The trigger was a change of wording: “considerable period” was replaced by “patient”.</p>
+<p>If words alone can move yields that much, communication is a policy instrument in its own right. This study asks two questions:</p>
+<ol type="1">
+<li><strong>Does FOMC statement language move asset prices beyond the rate decision?</strong></li>
+<li><strong>If so, through which channel?</strong> The literature proposes three:
+<ul>
+<li><strong>Policy signalling:</strong> words shift expectations about the future rate path.</li>
+<li><strong>Information:</strong> words reveal the Fed’s view of the economy.</li>
+<li><strong>Uncertainty:</strong> words change the risk premium on long-term bonds.</li>
+</ul></li>
+</ol>
+<p>The uncertainty channel has a testable signature. It should move long maturities more than short ones, and so change the slope of the yield curve. Hansen, McMahon and Tong (2019) find this pattern for the Bank of England. This study tests whether it holds for the Fed.</p>
+</section>
+<section id="data-and-methodology" class="level2">
+<h2 class="anchored" data-anchor-id="data-and-methodology">Data and methodology</h2>
+<p><strong>Sample.</strong> All 239 scheduled FOMC meetings, February 1994 to December 2023. Unscheduled emergency announcements are excluded. Post-meeting statements are scraped from federalreserve.gov and cleaned of headers, voting paragraphs and other non-policy text. 209 meetings have a matched statement. Regressions in first differences use 208.</p>
+<p><strong>Market data.</strong> 30-minute asset-price changes around each announcement from Bauer and Swanson (2023):</p>
+<ul>
+<li>2-, 5- and 10-year Treasury yields</li>
+<li>S&amp;P 500 futures</li>
+<li>the slope of the yield curve (10Y − 2Y)</li>
+</ul>
+<p>The benchmark is the <strong>monetary-policy surprise</strong> (<em>MPS</em>), the first principal component of high-frequency changes in short-rate futures (fed funds and Eurodollar contracts up to one year ahead).</p>
+<p><strong>Five text measures</strong>, from simple to expressive:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Measure</th>
+<th>What it captures</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Bag-of-words hawkishness index</td>
+<td>Hand-built dictionary of monetary-policy phrases (“removing accommodation”, “considerable period”), matched longest-first so context is respected</td>
+</tr>
+<tr class="even">
+<td>FinBERT</td>
+<td>Sentence-level financial tone from a transformer trained on financial news, averaged per statement</td>
+</tr>
+<tr class="odd">
+<td>CentralBankRoBERTa</td>
+<td>Transformer trained specifically on central-bank communication</td>
+</tr>
+<tr class="even">
+<td>LDA topic intensities</td>
+<td>Share of each statement devoted to latent topics</td>
+</tr>
+<tr class="odd">
+<td>RoBERTa embeddings</td>
+<td>Contextual representation of the full statement</td>
+</tr>
+</tbody>
+</table>
+<p>The dictionary score is</p>
+<p><span class="math display">\[
+\text{BoW}_t = \frac{H_t - D_t}{H_t + D_t + 1},
+\]</span></p>
+<p>where <span class="math inline">\(H_t\)</span> and <span class="math inline">\(D_t\)</span> count hawkish and dovish phrases. Positive values mean a more hawkish statement.</p>
+<p><strong>Estimation.</strong> For each market outcome <span class="math inline">\(k\)</span>:</p>
+<p><span class="math display">\[
+\Delta y_{t,k} = \alpha_k + \beta_k \, \text{MPS}_t + \gamma_k \, \Delta \text{Text}_t + \varepsilon_{t,k}
+\]</span></p>
+<p>Three design choices matter:</p>
+<ul>
+<li><strong>Text enters as a change from the previous statement.</strong> A 30-minute price move can only react to new information. The pre-meeting tone is already known.</li>
+<li><strong>Multi-dimensional measures are tested jointly.</strong> Topic and embedding blocks are tested with robust Wald tests.</li>
+<li><strong>Narrative shocks.</strong> Following Hansen, McMahon and Tong (2019), each text measure is also residualised on four pre-meeting macro variables. This isolates the part of the language that the economic state does not predict.</li>
+</ul>
+<p>All regressions are OLS with HC3 heteroskedasticity-robust standard errors.</p>
+</section>
+<section id="key-findings" class="level2">
+<h2 class="anchored" data-anchor-id="key-findings">Key findings</h2>
+<section id="the-policy-surprise-dominates" class="level3">
+<h3 class="anchored" data-anchor-id="the-policy-surprise-dominates">1. The policy surprise dominates</h3>
+<p>The monetary-policy surprise is highly significant for every outcome, with the expected signs:</p>
+<ul>
+<li><strong>Treasury yields:</strong> a hawkish surprise raises them at every maturity. The effect is strongest at two years.</li>
+<li><strong>Equities:</strong> the S&amp;P 500 falls.</li>
+<li><strong>Yield curve:</strong> it flattens.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fomc-figures/baseline-r2.svg" class="img-fluid figure-img" alt="Bar chart of R-squared from the monetary-policy surprise alone: 2-year Treasury 0.813, 5-year 0.638, 10-year 0.482, 10-year minus 2-year slope 0.339, S&amp;P 500 0.244."></p>
+<figcaption>R² from regressing 30-minute asset-price responses on the monetary-policy surprise alone (239 meetings).</figcaption>
+</figure>
+</div>
+<table class="table-striped caption-top table">
+<caption>Baseline regressions, N = 239. *** p &lt; 0.01.</caption>
+<thead>
+<tr class="header">
+<th>Outcome</th>
+<th>Coefficient on <em>MPS</em></th>
+<th>Robust s.e.</th>
+<th>R²</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2Y Treasury</td>
+<td>0.831***</td>
+<td>0.053</td>
+<td>0.813</td>
+</tr>
+<tr class="even">
+<td>5Y Treasury</td>
+<td>0.744***</td>
+<td>0.057</td>
+<td>0.638</td>
+</tr>
+<tr class="odd">
+<td>10Y Treasury</td>
+<td>0.520***</td>
+<td>0.049</td>
+<td>0.482</td>
+</tr>
+<tr class="even">
+<td>S&amp;P 500</td>
+<td>−4.728***</td>
+<td>0.682</td>
+<td>0.244</td>
+</tr>
+<tr class="odd">
+<td>10Y − 2Y slope</td>
+<td>−0.311***</td>
+<td>0.045</td>
+<td>0.339</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="statement-language-adds-almost-nothing-on-top" class="level3">
+<h3 class="anchored" data-anchor-id="statement-language-adds-almost-nothing-on-top">2. Statement language adds almost nothing on top</h3>
+<p>Across five text measures and five outcomes, the extra R² from adding text is close to zero:</p>
+<table class="table-striped caption-top table">
+<caption>Increase in R² over the surprise-only model. Stars show joint significance of the text coefficients (robust Wald test). The embedding row uses component levels. That result is diagnosed in finding 4 and does not survive.</caption>
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Measure</th>
+<th>2Y</th>
+<th>5Y</th>
+<th>10Y</th>
+<th>S&amp;P 500</th>
+<th>10Y−2Y</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>BoW dictionary</td>
+<td>+0.002</td>
+<td>+0.003</td>
+<td>+0.007</td>
+<td>+0.002</td>
+<td>+0.002</td>
+</tr>
+<tr class="even">
+<td>FinBERT</td>
+<td>+0.000</td>
+<td>+0.000</td>
+<td>+0.000</td>
+<td>+0.010</td>
+<td>+0.000</td>
+</tr>
+<tr class="odd">
+<td>CentralBankRoBERTa</td>
+<td>+0.005*</td>
+<td>+0.004</td>
+<td>+0.007</td>
+<td>+0.005</td>
+<td>+0.000</td>
+</tr>
+<tr class="even">
+<td>LDA topics</td>
+<td>+0.004</td>
+<td>+0.006</td>
+<td>+0.011</td>
+<td>+0.006</td>
+<td>+0.036</td>
+</tr>
+<tr class="odd">
+<td>RoBERTa embeddings</td>
+<td>+0.003</td>
+<td>+0.007</td>
+<td>+0.009</td>
+<td>+0.069***</td>
+<td>+0.023**</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>The dictionary</strong> does classify statements plausibly. The most hawkish ones cluster in the 2005–07 and 2015–18 tightening cycles; the most dovish in the 2008 crisis years and the early-2000s recession. Its coefficients also have the right sign, yet none is statistically significant.</li>
+<li><strong>FinBERT</strong> shows only a weak, insignificant link to equity returns.</li>
+<li><strong>Slope regressions</strong>, the direct test of the uncertainty channel, are insignificant for every text measure.</li>
+<li><strong>Narrative shocks</strong>, the residualised text measures, are insignificant too.</li>
+</ul>
+</section>
+<section id="the-null-is-not-an-artifact" class="level3">
+<h3 class="anchored" data-anchor-id="the-null-is-not-an-artifact">3. The null is not an artifact</h3>
+<p>One worry is that the policy surprise simply absorbs the text signal. It does not. The text surprises are almost uncorrelated with it: correlations range from −0.07 to +0.08. The text varies independently; it just does not predict prices.</p>
+</section>
+<section id="two-apparent-positives-diagnosed-and-rejected" class="level3">
+<h3 class="anchored" data-anchor-id="two-apparent-positives-diagnosed-and-rejected">4. Two apparent positives, diagnosed and rejected</h3>
+<ul>
+<li><strong>Topic levels</strong> seemed to explain S&amp;P 500 moves (p = 0.005).
+<ul>
+<li>The effect vanishes when the change in topics is used instead (p = 0.936). That is the specification consistent with the event-study design.</li>
+<li>It also loses significance once a post-2008 regime indicator is added (p = 0.092).</li>
+<li>So topic levels were tracking the policy era, not announcement news.</li>
+</ul></li>
+<li><strong>Embedding levels</strong> show the same pattern. Their first principal component correlates −0.719 with the calendar year.</li>
+<li><strong>One marginal survivor.</strong> Embedding <em>changes</em> remain linked to the 10Y−2Y slope (p = 0.009). The link weakens outside the zero lower bound (p = 0.095) and when crisis statements are excluded (p = 0.077). It is reported as suggestive only.</li>
+</ul>
+</section>
+<section id="replicating-the-targetpath-decomposition" class="level3">
+<h3 class="anchored" data-anchor-id="replicating-the-targetpath-decomposition">5. Replicating the target/path decomposition</h3>
+<p>As a benchmark, I rebuild the target and path factors of Gürkaynak, Sack and Swanson (2005) from raw futures data. The data come from the SF Fed’s U.S. Monetary Policy Event-Study Database. The replication reproduces their pattern: news about the future path of policy, not the current rate decision, drives longer-term yields.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="fomc-figures/gss-replication.svg" class="img-fluid figure-img" alt="Grouped bar chart. 2-year Treasury: target factor only 0.114, target plus path 0.839. 5-year: 0.063 and 0.650. 10-year: 0.008 and 0.388."></p>
+<figcaption>R² of Treasury yield responses on the target factor alone versus target plus path factor.</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="interpretation" class="level2">
+<h2 class="anchored" data-anchor-id="interpretation">Interpretation</h2>
+<p><em>The findings above are what the data show. This section is my reading of them.</em></p>
+<p>The policy surprise is measured in the same 30-minute window as the price moves. It therefore already captures the policy-path part of any news, including news carried by statement wording. What the text coefficients test is the effect of language <em>outside</em> the expected policy path. The obvious candidate is the term premium, which is the uncertainty channel.</p>
+<p>On that reading:</p>
+<ul>
+<li><strong>Policy signalling</strong> is captured by the surprise itself.</li>
+<li><strong>The information channel</strong> gets only weak, fragile support (FinBERT on equities).</li>
+<li><strong>The uncertainty channel</strong> gets no support in FOMC statements, unlike the Bank of England evidence.</li>
+</ul>
+<p>There is also a methodological lesson. Dictionaries are transparent but too coarse to read context. Transformer models read tone well, but they mix up financial sentiment with policy stance: strong-growth language can sound “positive” while being hawkish.</p>
+<p>For practitioners, the implication is narrow. In the announcement window, the market-implied surprise is the signal. Off-the-shelf tone scores of the statement add little beyond it.</p>
+</section>
+<section id="limitations" class="level2">
+<h2 class="anchored" data-anchor-id="limitations">Limitations</h2>
+<ul>
+<li><strong>Statements only.</strong> Press conferences, minutes and speeches are excluded, and they may carry the richer signal.</li>
+<li><strong>Immediate reactions only.</strong> The 30-minute window cannot see slower effects on expectations.</li>
+<li><strong>Model fit.</strong> FinBERT is trained on financial news, not central-bank language. CentralBankRoBERTa addresses this partly, but a model trained for hawkish/dovish classification on FOMC text could do better.</li>
+<li><strong>Different setting.</strong> The contrast with the Bank of England may reflect institutions, document type, or text method. This design cannot separate them.</li>
+</ul>
+</section>
+<section id="supporting-materials" class="level2">
+<h2 class="anchored" data-anchor-id="supporting-materials">Supporting materials</h2>
+<ul>
+<li><strong>Code:</strong> <a href="https://github.com/ehsankhoddamy/fomc-statements-asset-prices">github.com/ehsankhoddamy/fomc-statements-asset-prices</a>. Full pipeline in Python, including text measures, factor construction, regressions and diagnostics.</li>
+<li><strong>Data:</strong>
+<ul>
+<li>Bauer and Swanson (2023) monetary-policy surprises, Federal Reserve Bank of San Francisco</li>
+<li>U.S. Monetary Policy Event-Study Database (Acosta et al., 2025)</li>
+<li>FOMC statements from federalreserve.gov</li>
+</ul></li>
+<li><strong>Key references:</strong>
+<ul>
+<li>Gürkaynak, Sack and Swanson (2005), <em>International Journal of Central Banking</em></li>
+<li>Hansen, McMahon and Tong (2019), <em>Journal of Monetary Economics</em></li>
+<li>Bauer and Swanson (2023), <em>NBER Macroeconomics Annual</em></li>
+<li>Araci (2019), FinBERT</li>
+</ul></li>
+</ul>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/ehsankhoddamy\.github\.io");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Ehsan Khoddamy</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Built with <a href="https://quarto.org">Quarto</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

@@ -1,0 +1,134 @@
+---
+title: "Manager Selection in Private Equity Real Estate"
+description: "Due diligence on two US logistics real-estate funds and an allocation recommendation for a USD 40 million case-study mandate."
+date: 2026-07-10
+categories: [Real estate, Due diligence, Fund terms, ILPA / INREV]
+toc: true
+toc-location: right
+---
+
+<!-- CONFIDENTIAL CASE MATERIAL. Keep it that way when editing:
+     no fund or manager names, no fund-level figures (returns, fees, sizes, track record),
+     nothing quoted from the LPA, PPM or manager presentations. Method and market-level findings only. -->
+
+::: {.exec-summary}
+**In one minute.** A German professional pension fund has to commit USD 40 million to one of two US logistics funds, both marketed as core-plus. We compared them on market positioning, track record, terms and governance, chose one, and tied the recommendation to a side letter.
+
+- **Market:** higher rates shifted returns from market growth to manager execution. Small-box infill logistics held up far better than big-box, where speculative building created oversupply.
+- **Selection:** the fund with the higher target return was too early in its build-up to judge. We chose the fund with a realised track record and a small-box focus.
+- **Governance:** five side-letter requests, each grounded in ILPA Principles 3.0, including a cash-funded GP commitment.
+:::
+
+*Group case study (three students), Praxisworkshop with Ärzteversorgung Westfalen-Lippe (ÄVWL), University of Münster (Summer 2026). My part: the market and sector analysis and the INREV style classification. I also coordinated the group and checked the final paper against the primary sources. Fund names and fund-level figures are confidential and not shown here.*
+
+## Investment question
+
+ÄVWL invests in closed-end international real estate private equity funds through a dedicated fund-of-funds vehicle. The case asks which of two US logistics funds deserves a USD 40 million commitment, and on what terms.
+
+The memo takes the perspective of the decision date in 2024. It uses only information available at that time, because an investment decision can only be judged on what was known when it was made.
+
+```
+market view ──► compare two funds ──► deep dive ──► risk & governance ──► recommendation
+```
+
+## Materials and approach
+
+**Materials.**
+
+| Source | Used for |
+|---|---|
+| Manager presentations for both funds | Strategy, team, track record, target returns |
+| Private placement memorandum and LPA excerpts | Fund structure, fees, waterfall, governance rights |
+| CBRE *U.S. Real Estate Market Outlook 2024*; Primera Advisors *Global Real Estate Market Outlook 2024* | Macro and logistics market view |
+| INREV *Fund Style Classification Report* (2016) | Style classification |
+| ILPA *Principles 3.0* (2019) | Benchmark for terms, alignment and governance |
+
+: Case materials. The fund documents are confidential, so this page shows the method only. {.striped}
+
+**Approach:**
+
+- **Market assessment:** how higher rates reach real estate (cap rates, financing costs, investor demand), the structural demand drivers, and the split between small-box and big-box logistics.
+- **Fund comparison:** both funds side by side on ten criteria, including target assets, target net IRR, leverage limit, GP commitment, preferred return, waterfall, management fee, regional footprint and sourcing edge.
+- **Risk adjustment:** target returns weighed against how much of each manager's skill can actually be verified from realised results.
+- **Manager due diligence:** platform and organisation, team tenure and key-person exposure, realised track record against original underwriting.
+- **Risk review:** market risks (rates, exit liquidity) separated from operating risks (execution, key persons), plus asset-level risks such as short leases, tenant turnover and capex.
+- **Governance review:** waterfall, GP commitment, advisory board access and removal rights, checked against the LPA and ILPA Principles 3.0.
+- **Synthesis:** a SWOT analysis and a conditional recommendation.
+
+## Key findings
+
+### 1. Higher rates moved the return driver from market to manager
+
+The rise in the US policy rate from near zero to above five percent hit real estate through three channels at once: higher cap rates, higher financing costs and weaker investor demand (CBRE, 2024). With little help from the market, returns depend on how well a manager sources, leases and manages assets. Due diligence therefore has to weigh the manager more heavily than the market story.
+
+### 2. Small-box and big-box logistics moved apart
+
+After the record years of 2021 and 2022, the US logistics market normalised. Demand stayed structurally intact, supported by e-commerce, nearshoring and faster delivery promises that need space close to cities. But the two size segments diverged:
+
+| | Small-box infill | Big-box distribution |
+|---|---|---|
+| New supply | Constrained by higher building and financing costs and scarce infill land; new starts fell sharply in early 2024 | Speculative development created oversupply |
+| Vacancy (early 2024) | Low | Clearly higher |
+
+: Segment comparison at the 2024 decision date. {.striped}
+
+Within logistics, the size segment matters as much as the sector itself. This made size focus a central criterion in the fund comparison.
+
+### 3. "Core-plus" is a market label, not an INREV category
+
+Both funds describe themselves as core-plus. INREV, the European framework for non-listed real estate funds, defines only three styles: Core, Value Added and Opportunity. Classifying a fund means placing it on that scale using INREV's criteria: the share of the portfolio that is not yet income-producing, development exposure and leverage. On these criteria, the chosen fund sits between Core and the lower end of Value Added.
+
+### 4. Headline numbers pointed the wrong way
+
+Two comparisons first looked worse for the fund we chose. Both reversed on closer reading:
+
+- **Target return vs. evidence.** The other fund promised a higher target net IRR, but it had invested only a small share of its capital. There was no portfolio yet to judge. The chosen manager had fully realised predecessor funds that beat their original underwriting.
+- **Fee vs. total package.** The chosen fund's management fee was nominally higher. A higher preferred return and a larger GP commitment more than offset it.
+
+Risk-adjusted, the fund with the lower target return was the stronger choice.
+
+### 5. A sound structure still needed contractual fixes
+
+The waterfall and GP commitment gave basic alignment between manager and investors. Reading the terms against ILPA Principles 3.0 still showed five gaps, which we turned into side-letter requests:
+
+| Issue | Side-letter request | ILPA Principles 3.0 |
+|---|---|---|
+| GP commitment | Funded in cash, so the GP has its own money at risk | p. 17 |
+| Advisory board | A guaranteed seat for the investor | p. 9 |
+| Conflicts of interest | Proactive disclosure of all material conflicts to the advisory board | p. 9 |
+| GP removal | A two-thirds majority instead of a higher threshold | p. 20 |
+| Board participation | Reimbursement of costs for advisory board meetings | p. 28 |
+
+: Side-letter requests and where each is grounded. {.striped}
+
+The GP commitment point is the most instructive. Its size alone says little about alignment. A commitment funded through waived management fees puts far less of the GP's own cash at risk than one paid in cash.
+
+## Recommendation
+
+Commit USD 40 million to the small-box fund, **conditional on the side letter**. The small-box focus is defensive, and short leases let rents move to market levels quickly, which can partly offset higher financing costs. The manager's vertical integration and realised track record support the strategy.
+
+**SWOT summary**
+
+| Strengths | Weaknesses |
+|---|---|
+| Scarce small-box supply in infill locations | Operationally intensive: frequent re-leasing |
+| Proven edge in less competitive sourcing | Smaller deal sizes, harder to scale |
+| Consistent realised track record | Depends on local teams and their continuity |
+
+| Opportunities | Threats |
+|---|---|
+| Entry at reset prices in a normalising market | Rates stay high and delay exits |
+| Rent upside from short leases | Local slowdowns raise re-leasing risk |
+| E-commerce, nearshoring and last-mile demand | Returns hinge on the manager's execution |
+
+## Limitations
+
+- **A case study, not a live deal.** The mandate is a teaching case built on anonymised fund documents.
+- **Mostly manager-sourced information.** Track record, sourcing advantage and part of the market data come from the managers' own materials. Independent checks, such as reference calls or property-level data, were beyond the scope of the case.
+- **Fixed 2024 perspective.** Later market developments are deliberately left out.
+
+## Supporting materials
+
+- **Paper:** *Managerselektion in Private Equity Real Estate* (German, July 2026). Not public, because it draws on confidential fund documents.
+- **Frameworks:** ILPA, *Principles 3.0* (2019); INREV, *Fund Style Classification Report* (2016).
+- **Market sources:** CBRE, *U.S. Real Estate Market Outlook 2024*; Primera Advisors, *Global Real Estate Market Outlook 2024*.

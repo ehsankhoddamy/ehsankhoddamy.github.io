@@ -10,9 +10,9 @@ page-layout: article
 [Financial Analyst · Quantitative Research · Controlling & Finance Analytics]{.headline}
 
 ::: {.intro}
-I'm a financial analyst finishing an M.Sc. in Finance at the University of Münster. I bring valuation experience from around 20 investment-banking projects, controlling and reporting work at Nestlé Nespresso, and empirical research that uses NLP and machine learning to study how information moves asset prices.
+I'm a financial analyst with experience in corporate valuation, investment research, and management reporting. I am completing an M.Sc. in Business Administration with a focus on Finance at the University of Münster, where my academic work focuses on asset pricing, financial engineering, and empirical capital-markets research. My professional experience spans DCF and comparable-company valuation, portfolio and risk analysis, and data-driven financial reporting at Nestlé Nespresso.
 
-On this site you'll find the work itself: the question, the data, the method and what I found.
+This site presents selected research and analytical projects, including the questions, data, methods, and practical implications behind the results.
 :::
 
 ::: {.actions}
